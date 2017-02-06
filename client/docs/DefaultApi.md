@@ -1,4 +1,4 @@
-# swagger_client.DefaultApi
+# greeting.DefaultApi
 
 All URIs are relative to *http://swagger.dev:8080/echo*
 
@@ -17,12 +17,12 @@ Method | HTTP request | Description
 ### Example 
 ```python
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import greeting
+from greeting.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi()
+api_instance = greeting.DefaultApi()
 
 try: 
     api_instance.api_hello_get()
@@ -56,12 +56,12 @@ No authorization required
 ### Example 
 ```python
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import greeting
+from greeting.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi()
+api_instance = greeting.DefaultApi()
 name = 'name_example' # str | name (optional)
 year = 'year_example' # str | year (optional)
 
@@ -101,12 +101,12 @@ No authorization required
 ### Example 
 ```python
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import greeting
+from greeting.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi()
+api_instance = greeting.DefaultApi()
 id = 'id_example' # str | ID
 
 try: 
