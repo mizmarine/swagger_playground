@@ -61,7 +61,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://mazimi-prod.apigee.net/echo"
+        self.host = "http://swagger.dev:8080/echo"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files

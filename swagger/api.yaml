@@ -8,8 +8,12 @@ info:
     render back everything.
 schemes:
   - http
-host: mazimi-prod.apigee.net
+host: swagger.dev:8080
 basePath: /echo
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
   /hello:
     get:
