@@ -25,6 +25,7 @@
 from __future__ import absolute_import
 
 # import models into sdk package
+from .models.member import Member
 
 # import apis into sdk package
 from .apis.default_api import DefaultApi

@@ -24,5 +24,30 @@
 
 from __future__ import absolute_import
 
-# import models into model package
-from .member import Member
+import os
+import sys
+import unittest
+
+import greeting
+from greeting.rest import ApiException
+from greeting.models.member import Member
+
+
+class TestMember(unittest.TestCase):
+    """ Member unit test stubs """
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def testMember(self):
+        """
+        Test Member
+        """
+        model = greeting.models.member.Member()
+
+
+if __name__ == '__main__':
+    unittest.main()
