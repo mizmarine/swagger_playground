@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import yaml
 from jsonschema import Draft4Validator, ValidationError, draft4_format_checker
+from connexion.decorators.validation import RequestBodyValidator
 import pytest
 
 
@@ -17,6 +18,23 @@ class RequestBodyValidatorTestBase(object):
     def assert_fail(self, data):
         with pytest.raises(ValidationError):
             self.validator.validate(data)
+
+
+# 以下でも良さそうだと思ったが，flaskのcontext以外で動かすとRuntimeErrorになるので却下
+class RequestBodyValidatorTestBase2(object):
+    def setup(self):
+        with open('swagger/api.yaml') as f:
+            spec = yaml.load(f)
+        schema = spec['paths'][self.path]['post']['parameters'][0]['schema']
+        consumes = spec.get('consumes', ['application/json'])
+        self.validator = RequestBodyValidator(schema, consumes)
+
+    def assert_success(self, data):
+        assert self.validator.validate_schema(data) is None
+
+    def assert_fail(self, data):
+        problem = self.validator.validate_schema(data)
+        assert problem.status == 400
 
 
 class TestMember(RequestBodyValidatorTestBase):
