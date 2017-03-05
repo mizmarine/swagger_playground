@@ -40,7 +40,7 @@ paths:
       - name: id
         in: path
         description: ID
-        type: string
+        type: integer
         required: true
     get:
       operationId: api.member.get
