@@ -35,11 +35,30 @@ paths:
           in: formData
           description: year
           type: string
+  /member:
+    post:
+      operationId: api.member.post
+      parameters:
+        - name: data
+          in: body
+          schema:
+            type: object
+            required:
+            - name
+            properties:
+              name:
+                type: string
+              age:
+                type: integer
+                minimum: 0
+      responses:
+        200:
+          description: member POST
   /member/{id}:
     parameters:
       - name: id
         in: path
-        description: ID
+        description: id
         type: integer
         required: true
     get:
@@ -49,10 +68,9 @@ paths:
           description: get specified menber object
           schema:
             type: object
-            $ref: '#/definitions/Member'
-
+            $ref: '#/definitions/member'
 definitions:
-  Member:
+  member:
     type: object
     properties:
       id:
