@@ -48,6 +48,7 @@ paths:
             properties:
               name:
                 type: string
+                minLength: 1
               age:
                 type: integer
                 minimum: 0
