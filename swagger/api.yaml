@@ -46,4 +46,17 @@ paths:
       operationId: api.member.get
       responses:
         200:
-          description: Echo test-path
+          description: get specified menber object
+          schema:
+            type: object
+            $ref: '#/definitions/Member'
+
+definitions:
+  Member:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
