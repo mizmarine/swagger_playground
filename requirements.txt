@@ -32,6 +32,6 @@ strict-rfc3339==0.7
 -e git+https://github.com/mizmarine/swagger_playground.git@2dcd241f9a0590d8ea953670ed6a44a270b9bbb0#egg=swagger_client&subdirectory=client
 swagger-spec-validator==2.0.2
 traitlets==4.3.1
-urllib3==1.20
+urllib3==1.26.5
 wcwidth==0.1.7
 Werkzeug==0.11.15
